@@ -62,8 +62,8 @@ func (c *ginCtx) BodyReader() io.Reader {
 	return c.orig.Request.Body
 }
 
-func (c *ginCtx) GetMultipartForm() (*multipart.Form, error) {
-	err := c.orig.Request.ParseMultipartForm(8 * 1024)
+func (c *ginCtx) GetMultipartForm(uploadLimit int64) (*multipart.Form, error) {
+	err := c.orig.Request.ParseMultipartForm(uploadLimit)
 	return c.orig.Request.MultipartForm, err
 }
 

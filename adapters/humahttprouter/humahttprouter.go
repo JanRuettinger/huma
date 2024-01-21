@@ -65,8 +65,8 @@ func (c *httprouterContext) BodyReader() io.Reader {
 	return c.r.Body
 }
 
-func (c *httprouterContext) GetMultipartForm() (*multipart.Form, error) {
-	err := c.r.ParseMultipartForm(8 * 1024)
+func (c *httprouterContext) GetMultipartForm(uploadLimit int64) (*multipart.Form, error) {
+	err := c.r.ParseMultipartForm(uploadLimit)
 	return c.r.MultipartForm, err
 }
 

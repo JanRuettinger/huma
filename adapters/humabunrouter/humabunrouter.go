@@ -65,8 +65,8 @@ func (c *bunContext) BodyReader() io.Reader {
 	return c.r.Body
 }
 
-func (c *bunContext) GetMultipartForm() (*multipart.Form, error) {
-	err := c.r.ParseMultipartForm(8 * 1024)
+func (c *bunContext) GetMultipartForm(uploadLimit int64) (*multipart.Form, error) {
+	err := c.r.ParseMultipartForm(uploadLimit)
 	return c.r.MultipartForm, err
 }
 
@@ -146,8 +146,8 @@ func (c *bunCompatContext) BodyReader() io.Reader {
 	return c.r.Body
 }
 
-func (c *bunCompatContext) GetMultipartForm() (*multipart.Form, error) {
-	err := c.r.ParseMultipartForm(8 * 1024)
+func (c *bunCompatContext) GetMultipartForm(uploadLimit int64) (*multipart.Form, error) {
+	err := c.r.ParseMultipartForm(uploadLimit)
 	return c.r.MultipartForm, err
 }
 

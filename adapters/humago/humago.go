@@ -70,8 +70,8 @@ func (c *goContext) BodyReader() io.Reader {
 	return c.r.Body
 }
 
-func (c *goContext) GetMultipartForm() (*multipart.Form, error) {
-	err := c.r.ParseMultipartForm(8 * 1024)
+func (c *goContext) GetMultipartForm(uploadLimit int64) (*multipart.Form, error) {
+	err := c.r.ParseMultipartForm(uploadLimit)
 	return c.r.MultipartForm, err
 }
 
