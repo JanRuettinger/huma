@@ -70,7 +70,8 @@ func (c *fiberCtx) BodyReader() io.Reader {
 	return bytes.NewReader(c.orig.BodyRaw())
 }
 
-func (c *fiberCtx) GetMultipartForm() (*multipart.Form, error) {
+// add uploadLimit param for compatibility reasons
+func (c *fiberCtx) GetMultipartForm(uploadLimit int64) (*multipart.Form, error) {
 	return c.orig.MultipartForm()
 }
 

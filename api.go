@@ -90,7 +90,7 @@ type Context interface {
 	BodyReader() io.Reader
 
 	// GetMultipartForm returns the parsed multipart form, if any.
-	GetMultipartForm() (*multipart.Form, error)
+	GetMultipartForm(uploadLimit int64) (*multipart.Form, error)
 
 	// SetReadDeadline sets the read deadline for the request body.
 	SetReadDeadline(time.Time) error
