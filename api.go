@@ -367,9 +367,9 @@ func NewAPI(config Config, a Adapter) API {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Elements in HTML</title>
     <!-- Embed elements Elements via Web Component -->
-    <link href="https://unpkg.com/@stoplight/elements@8.0.0/styles.min.css" rel="stylesheet" />
-    <script src="https://unpkg.com/@stoplight/elements@8.0.0/web-components.min.js"
-            integrity="sha256-yIhuSFMJJ6mp2XTUAb4SiSYneP3Qav8Uu+7NBhGJW5A="></script>
+	<link href="https://unpkg.com/@stoplight/elements@8.0.0/styles.min.css" rel="stylesheet" />
+	<script src="https://unpkg.com/@stoplight/elements@8.0.0/web-components.min.js"></script>
+
   </head>
   <body>
 
